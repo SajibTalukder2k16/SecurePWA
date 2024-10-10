@@ -1,0 +1,81 @@
+{
+  "configVersion": 1,
+  "timestamp": 1728584881750,
+  "index": "/SecurePWA/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/SecurePWA/favicon.ico",
+        "/SecurePWA/index.html",
+        "/SecurePWA/main.a98d6a2ea37b854f.js",
+        "/SecurePWA/manifest.webmanifest",
+        "/SecurePWA/polyfills.699d7809ec8d7c74.js",
+        "/SecurePWA/runtime.3f444e933d625c00.js",
+        "/SecurePWA/styles.4be6674bb5396a48.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/SecurePWA/assets/icons/icon-128x128.png",
+        "/SecurePWA/assets/icons/icon-144x144.png",
+        "/SecurePWA/assets/icons/icon-152x152.png",
+        "/SecurePWA/assets/icons/icon-192x192.png",
+        "/SecurePWA/assets/icons/icon-384x384.png",
+        "/SecurePWA/assets/icons/icon-512x512.png",
+        "/SecurePWA/assets/icons/icon-72x72.png",
+        "/SecurePWA/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/SecurePWA/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "/SecurePWA/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "/SecurePWA/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "/SecurePWA/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "/SecurePWA/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/SecurePWA/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/SecurePWA/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "/SecurePWA/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "/SecurePWA/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/SecurePWA/index.html": "4447012466852ab6c5f392de1ce29c783af57aa9",
+    "/SecurePWA/main.a98d6a2ea37b854f.js": "5753bcbc4edc81a98a85d7a8081e76efd2af4ac7",
+    "/SecurePWA/manifest.webmanifest": "76d3721c86ed777a0208a4f154721b11051e2afb",
+    "/SecurePWA/polyfills.699d7809ec8d7c74.js": "7cc8046e196f3c122b0d57f3f8ae7fcbff771479",
+    "/SecurePWA/runtime.3f444e933d625c00.js": "16d48a50e4e9ce5295e5b0d62a8bff99e906b068",
+    "/SecurePWA/styles.4be6674bb5396a48.css": "80cf05435f35bd7726b307603d0c22defc97bd02"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
