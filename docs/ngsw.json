@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1728589109830,
+  "timestamp": 1728589711724,
   "index": "/SecurePWA/index.html",
   "assetGroups": [
     {
@@ -52,7 +52,7 @@
     "/SecurePWA/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
     "/SecurePWA/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
     "/SecurePWA/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/SecurePWA/index.html": "78ad036c59d177025d439eb65d0fa1c4b6e34eed",
+    "/SecurePWA/index.html": "bfac3e390d3057a9916e536d9aef053949b18cf5",
     "/SecurePWA/main.a98d6a2ea37b854f.js": "5753bcbc4edc81a98a85d7a8081e76efd2af4ac7",
     "/SecurePWA/manifest.webmanifest": "76d3721c86ed777a0208a4f154721b11051e2afb",
     "/SecurePWA/polyfills.699d7809ec8d7c74.js": "7cc8046e196f3c122b0d57f3f8ae7fcbff771479",
