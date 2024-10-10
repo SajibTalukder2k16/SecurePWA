@@ -1,0 +1,32 @@
+<div class="signup-container">
+  <mat-card class="signup-card">
+    <div class="button-center">
+      <h2>Sign Up</h2>
+    </div>
+    <form (ngSubmit)="onSignup()">
+      <mat-form-field appearance="fill" class="width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter your email" [(ngModel)]="email" name="email" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="width">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter your password" [(ngModel)]="password" name="password" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide or show password'">
+          <mat-icon class="eye-position">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="width">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Confirm your password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+      </mat-form-field>
+      <div class="button-center">
+        <button  mat-raised-button color="primary" type="submit">Sign Up</button>
+      </div>
+    </form>
+    <div class="button-center">
+      <p>Already have an account? <a routerLink="/login">Log in here</a></p>
+    </div>
+  </mat-card>
+</div>
