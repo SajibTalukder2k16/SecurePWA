@@ -24,7 +24,7 @@ export class SuccessPageComponent implements OnInit {
   fetchAnotherQuote(): void {
     const enM = localStorage.getItem('enM');
     const enI = localStorage.getItem('enI');
-    const apiUrl = 'http://localhost:3000/your-endpoint';
+    const apiUrl = 'http://localhost:5001/getQuote';
     const payload = { enM: enM, enI: enI };
 
     this.http.post<{ quote: string, writer: string }>(apiUrl, payload).subscribe(

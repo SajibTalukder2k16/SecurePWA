@@ -15,7 +15,7 @@ interface ApiResponse {
 })
 
 export class LandingPageComponent implements OnInit {
-
+  //Sample Params: http://localhost:4200/?SecurePWA=01d4af2082cc62ea4004afd4b2f490c5@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
   welcomeMessage: string = 'This app is protected by advanced security measures to prevent unauthorized copying or extraction of content.';
   queryParams: { [key: string]: string } = {};
 
@@ -59,7 +59,7 @@ export class LandingPageComponent implements OnInit {
   makeApiCall(params: { [key: string]: string }): void {
     const enM = localStorage.getItem('enM');
     const enI = localStorage.getItem('enI');
-    const apiUrl = 'http://localhost:3000/your-endpoint';
+    const apiUrl = 'http://localhost:5001/getQuote';
     const payload = {
       enM: enM,
       enI: enI
