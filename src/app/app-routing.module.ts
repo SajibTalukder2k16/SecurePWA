@@ -10,10 +10,10 @@ import {ErrorPageComponent} from "./components/error-page/error-page.component";
 import {AuthGuard} from "./guard/auth.guard";
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'home', component: HomeComponent },  // Ensure this line is present
-  { path: 'profile', component: ProfileComponent },
+  // { path: 'login', component: LoginComponent },
+  // { path: 'signup', component: SignupComponent },
+  // { path: 'home', component: HomeComponent },  // Ensure this line is present
+  // { path: 'profile', component: ProfileComponent },
   { path: '', component: LandingPageComponent },
   { path: 'success-page', component: SuccessPageComponent, canActivate: [AuthGuard] },
   { path: 'error-page', component: ErrorPageComponent },
