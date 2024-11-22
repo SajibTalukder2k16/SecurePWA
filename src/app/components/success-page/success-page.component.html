@@ -1,1 +1,7 @@
-<p>success-page works!</p>
+<div class="success-container">
+  <div class="quote-container">
+    <blockquote class="quote">{{ quote }}</blockquote>
+    <cite class="writer">- {{ writer }}</cite>
+  </div>
+  <button mat-raised-button color="primary" (click)="fetchAnotherQuote()">Another Quote</button>
+</div>

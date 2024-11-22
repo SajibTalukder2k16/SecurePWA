@@ -1,0 +1,30 @@
+.success-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.quote-container {
+  margin-top: 20px;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.quote {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.writer {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #888;
+  text-align: right;
+  margin-right: 10px;
+  padding-right: 5px;
+}
