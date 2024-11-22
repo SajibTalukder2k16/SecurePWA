@@ -18,6 +18,10 @@ import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/h
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button";
 import { ServiceWorkerModule } from '@angular/service-worker';
+import {CommonModule} from "@angular/common";
+import {LandingPageComponent} from "./components/landing-page/landing-page.component";
+import { SuccessPageComponent } from './components/success-page/success-page.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     LoginComponent,
     SignupComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    LandingPageComponent,
+    SuccessPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +46,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HttpClientModule,
     MatButtonModule,
     MatFormFieldModule,
+    CommonModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
