@@ -5,4 +5,13 @@
         "package_name": "io.github.sajibtalukder2k16.twa",
         "sha256_cert_fingerprints": ["A4:0A:7F:47:8C:73:83:D0:AB:A4:4D:2F:30:29:FA:F1:E0:9F:4E:50:44:96:60:CE:D6:D3:88:05:47:3A:A0:22"]
       }
-    }]
+    },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.android.securepwa",
+      "sha256_cert_fingerprints": ["A4:0A:7F:47:8C:73:83:D0:AB:A4:4D:2F:30:29:FA:F1:E0:9F:4E:50:44:96:60:CE:D6:D3:88:05:47:3A:A0:22"]
+    }
+  }
+]

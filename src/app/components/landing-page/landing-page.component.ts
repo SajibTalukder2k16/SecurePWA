@@ -16,6 +16,9 @@ interface ApiResponse {
 
 export class LandingPageComponent implements OnInit {
   //Sample Params: http://localhost:4200/?SecurePWA=01d4af2082cc62ea4004afd4b2f490c5@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
+  //Sample Params: http://localhost:4200/?SecurePWA=5d96886b6151da1110ac187031cfac66@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
+  //5d96886b6151da1110ac187031cfac66@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
+
   welcomeMessage: string = 'This app is protected by advanced security measures to prevent unauthorized copying or extraction of content.';
   queryParams: { [key: string]: string } = {};
 
