@@ -25,7 +25,7 @@ export class SuccessPageComponent implements OnInit {
     const enM = localStorage.getItem('enM');
     const enI = localStorage.getItem('enI');
     const apiUrl = 'http://localhost:5001/getQuote';
-    const payload = { enM: enM, enI: enI };
+    const payload = { enM: enM, enI: enI, reSubmit: true, };
 
     this.http.post<{ quote: string, writer: string }>(apiUrl, payload).subscribe(
       response => {
@@ -34,6 +34,27 @@ export class SuccessPageComponent implements OnInit {
       },
       error => {
         console.error('Error fetching quote:', error);
+        var errorMessage = error.error.message || 'An unexpected error occurred.';
+        console.log("Error: ", error.error.error);
+        const data = error.error.error;
+        var retry_time = error.error.retry_after
+
+        // Remove the "Error: " prefix and trim any extra spaces
+        const extractedData = data.replace("Error:  ", "").trim();
+
+        // console.log(extractedData); // Output: "Timestamp expired"
+
+        if(extractedData === "Timestamp expired") {
+          errorMessage = "Please close your app from background and open it again.";
+        }
+        else if(extractedData === "API access limit reached") {
+          errorMessage = "You have reached your limit with this device. Please try after " + retry_time;
+        }
+        else if(extractedData === "Invalid device ID or timestamp" || extractedData === "Exists") {
+          errorMessage = "You are using our system from a different app. Please install original app and try again";
+        }
+
+        this.router.navigate(['/error-page'], { state: { errorMessage: errorMessage } });
       }
     );
   }

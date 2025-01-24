@@ -16,7 +16,8 @@ interface ApiResponse {
 
 export class LandingPageComponent implements OnInit {
   //Sample Params: http://localhost:4200/?SecurePWA=01d4af2082cc62ea4004afd4b2f490c5@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
-  //Sample Params: http://localhost:4200/?SecurePWA=5d96886b6151da1110ac187031cfac66@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
+  //Sample Params: http://localhost:4200/?SecurePWA=07143f2ed15de1aaeb1f14c00c7e285e@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
+  //Sample Params: http://localhost:4200/?SecurePWA=d6b79ef3915e750874cf34ae659fdb80@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
   //5d96886b6151da1110ac187031cfac66@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
 
   welcomeMessage: string = 'This app is protected by advanced security measures to prevent unauthorized copying or extraction of content.';
@@ -65,7 +66,8 @@ export class LandingPageComponent implements OnInit {
     const apiUrl = 'http://localhost:5001/getQuote';
     const payload = {
       enM: enM,
-      enI: enI
+      enI: enI,
+      reSubmit: false,
     };
     setTimeout(() => {
       this.http.post<ApiResponse>(apiUrl, payload).subscribe(
@@ -74,7 +76,28 @@ export class LandingPageComponent implements OnInit {
           this.router.navigate(['/success-page'], { state: { quote: response.quote, writer: response.writer } });
         },
         error => {
-          const errorMessage = error.error.message || 'An unexpected error occurred.';
+          var errorMessage = error.error.message || 'An unexpected error occurred.';
+          console.log("Error: ", error.error.error);
+          const data = error.error.error;
+          var retry_time = error.error.retry_after
+
+          // Remove the "Error: " prefix and trim any extra spaces
+          const extractedData = data.replace("Error:  ", "").trim();
+
+          console.log(extractedData); // Output: "Timestamp expired"
+
+          if(extractedData === "Timestamp expired") {
+            errorMessage = "Please close your app from background and open it again.";
+          }
+          else if(extractedData === "API access limit reached") {
+            errorMessage = "You have reached your limit with this device. Please try after " + retry_time;
+          }
+          else if(extractedData === "Invalid device ID or timestamp" || extractedData === "Exists") {
+            errorMessage = "You are using our system from a different app. Please install original app and try again";
+          }
+
+
+
           this.router.navigate(['/error-page'], { state: { errorMessage: errorMessage } });
         }
       );
