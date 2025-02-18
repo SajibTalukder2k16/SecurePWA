@@ -18,6 +18,8 @@ export class LandingPageComponent implements OnInit {
   //Sample Params: http://localhost:4200/?SecurePWA=01d4af2082cc62ea4004afd4b2f490c5@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
   //Sample Params: http://localhost:4200/?SecurePWA=07143f2ed15de1aaeb1f14c00c7e285e@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
   //Sample Params: http://localhost:4200/?SecurePWA=d6b79ef3915e750874cf34ae659fdb80@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
+  //Sample Params: http://localhost:4200/?SecurePWA=20df89c00cdde3fd0129ba3be3f5661d@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
+  /// http://localhost:4200/?SecurePWA=941696e545120ad737a28f79ad665634@PWA023d7b9a9f539816fe733bd4d442f72f96c5ddaeb7500fc7dc44990036107881
   //5d96886b6151da1110ac187031cfac66@PWAae228e87fdd7976a1775187ab6ffaf81cbe66884978f74d147bf3951c3f6f9af
 
   welcomeMessage: string = 'This app is protected by advanced security measures to prevent unauthorized copying or extraction of content.';
@@ -84,15 +86,15 @@ export class LandingPageComponent implements OnInit {
           // Remove the "Error: " prefix and trim any extra spaces
           const extractedData = data.replace("Error:  ", "").trim();
 
-          console.log(extractedData); // Output: "Timestamp expired"
+          //console.log(extractedData); // Output: "Timestamp expired"
 
-          if(extractedData === "Timestamp expired") {
+          if(extractedData === "Expired") {
             errorMessage = "Please close your app from background and open it again.";
           }
-          else if(extractedData === "API access limit reached") {
+          else if(extractedData === "Access limit reached") {
             errorMessage = "You have reached your limit with this device. Please try after " + retry_time;
           }
-          else if(extractedData === "Invalid device ID or timestamp" || extractedData === "Exists") {
+          else if(extractedData === "Invalid Data" || extractedData === "Already Existing Data") {
             errorMessage = "You are using our system from a different app. Please install original app and try again";
           }
 

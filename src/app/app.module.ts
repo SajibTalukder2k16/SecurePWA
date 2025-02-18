@@ -22,6 +22,7 @@ import {CommonModule} from "@angular/common";
 import {LandingPageComponent} from "./components/landing-page/landing-page.component";
 import { SuccessPageComponent } from './components/success-page/success-page.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { ExpiredPageComponent } from './components/expired-page/expired-page.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     HomeComponent,
     LandingPageComponent,
     SuccessPageComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ExpiredPageComponent
   ],
   imports: [
     BrowserModule,

@@ -42,15 +42,13 @@ export class SuccessPageComponent implements OnInit {
         // Remove the "Error: " prefix and trim any extra spaces
         const extractedData = data.replace("Error:  ", "").trim();
 
-        // console.log(extractedData); // Output: "Timestamp expired"
-
-        if(extractedData === "Timestamp expired") {
+        if(extractedData === "Expired") {
           errorMessage = "Please close your app from background and open it again.";
         }
-        else if(extractedData === "API access limit reached") {
+        else if(extractedData === "Access limit reached") {
           errorMessage = "You have reached your limit with this device. Please try after " + retry_time;
         }
-        else if(extractedData === "Invalid device ID or timestamp" || extractedData === "Exists") {
+        else if(extractedData === "Invalid Data" || extractedData === "Already Existing Data") {
           errorMessage = "You are using our system from a different app. Please install original app and try again";
         }
 
